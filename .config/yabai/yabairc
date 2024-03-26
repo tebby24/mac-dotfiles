@@ -1,0 +1,49 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+# enable debug output
+yabai -m config debug_output on
+
+# set mouse interaction modifier key (default: fn)
+yabai -m config mouse_modifier ctrl
+
+# set modifier + left-click drag to move window (default: move)
+yabai -m config mouse_action1 move
+
+# set modifier + right-click drag to resize window (default: resize)
+yabai -m config mouse_action2 resize
+
+# configure default layout
+yabai -m config layout float
+
+# remove shadows
+yabai -m config window_shadow off
+
+# active and normal window opacity
+# yabai -m config window_opacity on
+# yabai -m config active_window_opacity 1.0
+# yabai -m config normal_window_opacity 0.85
+
+# when windows are closed, check to see if there are 0 windows on the space
+# if so, change layout to float
+yabai -m signal --add event=window_destroyed action="sh ~/.config/yabai/scripts/auto_float.sh"
+
+# float system preferences
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+
+# set padding and gaps
+yabai -m config top_padding    8
+yabai -m config bottom_padding 8
+yabai -m config left_padding   8
+yabai -m config right_padding  8
+yabai -m config window_gap     8
+
+# focus window after active space changes
+yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+
+# focus window after active display changes
+yabai -m signal --add event=display_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+
+# borders (from https://github.com/FelixKratz/JankyBorders)
+borders active_color=0xffffffff inactive_color=0x55ffffff width=4.0 style=round hidpi=on
