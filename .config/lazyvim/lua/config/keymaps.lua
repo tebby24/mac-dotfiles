@@ -6,7 +6,16 @@ keymap.set("n", "<Leader>w", ":update<Return>", opts)
 keymap.set("n", "<Leader>q", ":quit<Return>", opts)
 
 -- File navigation
-keymap.set("n", "<C-p>", "")
+local telescope = require("telescope.builtin")
+keymap.set("n", "<C-p>", telescope.find_files)
+
+local harpoon = require("harpoon")
+keymap.set("n", "<C-a>", function()
+    harpoon:list():prev()
+end)
+keymap.set("n", "<C-d>", function()
+    harpoon:list():next()
+end)
 
 -- Copilot Chat
 local chat = require("CopilotChat")
@@ -20,3 +29,22 @@ keymap.set("n", "<leader>ccq", function()
         require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
     end
 end)
+
+-- Diagnostics
+vim.g["diagnostics_active"] = true
+function Toggle_diagnostics()
+    if vim.g.diagnostics_active then
+        vim.g.diagnostics_active = false
+        vim.diagnostic.disable()
+    else
+        vim.g.diagnostics_active = true
+        vim.diagnostic.enable()
+    end
+end
+
+vim.keymap.set(
+    "n",
+    "<leader>xd",
+    Toggle_diagnostics,
+    { noremap = true, silent = true, desc = "Toggle vim diagnostics" }
+)

@@ -9,15 +9,16 @@ return {
                 auto_trigger = false,
                 debounce = 75,
                 keymap = {
-                    accept = "<Tab>",
+                    accept = "<C-\\>",
                     accept_word = false,
                     accept_line = false,
-                    next = "<C-]",
+                    next = "<C-]>",
                     prev = "<C-[>",
                     dismiss = "<Esc>",
                 },
             },
-            panel = { enabled = false },
+            -- panel = { enabled = false },
+
             filetypes = {
                 markdown = true,
                 help = true,

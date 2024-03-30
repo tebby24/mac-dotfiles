@@ -4,6 +4,10 @@ ctrl + cmd - b : yabai -m space --layout bsp
 # trigger float layout on current space
 ctrl + cmd - f : yabai -m space --layout float
 
+# trigger stack layout on current space
+ctrl + cmd - s : yabai -m space --layout stack
+
+
 # swich window focus
 ctrl + cmd - space : yabai -m window --focus "$(yabai -m query --windows --space | jq -re "[sort_by(.id, .frame) | reverse | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")"
 ctrl + cmd - h : yabai -m window --focus west
@@ -19,7 +23,7 @@ ctrl + cmd - 0x18 : yabai -m window --resize right:30:0
 ctrl + cmd - 0x1B : yabai -m window --resize right:-30:0
 
 # swap windows
-ctrl + cmd - s : yabai -m window --swap recent
+ctrl + cmd - h : yabai -m window --swap recent
 
 # move windows by space
 ctrl + cmd - right : yabai -m window --space next; yabai -m space --focus next

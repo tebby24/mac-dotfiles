@@ -14,6 +14,7 @@ require("lazy").setup({
         { import = "lazyvim.plugins.extras.coding.copilot" },
         { import = "lazyvim.plugins.extras.formatting.prettier" },
         { import = "lazyvim.plugins.extras.editor.harpoon2" },
+        { import = "lazyvim.plugins.extras.lang.typescript" },
         -- import/override with your plugins
         { import = "plugins" },
     },
@@ -42,5 +43,8 @@ require("lazy").setup({
                 "zipPlugin",
             },
         },
+    },
+    ui = {
+        border = "rounded",
     },
 })
