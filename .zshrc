@@ -8,6 +8,7 @@ alias ankimedia='open $HOME/Library/Application\ Support/Anki2/tebby24/collectio
 
 # dotfiles
 alias df='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias dfacp='df add -u && df commit -m "Update dotfiles" && df push'
 
 # configuration files
 alias zshconfig='vim $HOME/.zshrc'
