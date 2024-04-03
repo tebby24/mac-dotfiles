@@ -1,0 +1,28 @@
+# directories
+alias applicationsupport='open $HOME/Library/Application\ Support'
+alias ankimedia='open $HOME/Library/Application\ Support/Anki2/tebby24/collection.media'
+
+# dotfiles
+alias df='git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias dfacp='df add -u && df commit -m "Update dotfiles" && df push'
+
+# configuration files
+alias zshconfig='vim $HOME/.zshrc'
+alias yabaiconfig='vim $HOME/.config/yabai/yabairc'
+alias skhdconfig='vim $HOME/.config/skhd/skhdrc'
+alias tmuxconfig='vim $HOME/.config/tmux/tmux.conf'
+
+# chinese
+alias reader='$HOME/scripts/chinese/reader/reader.sh'
+alias chineseaudio='python3 $HOME/scripts/chinese/anki/savewordaudios.py'
+
+alias asbplayer='cd $HOME/Applications/asbplayer && yarn workspace @project/client run start'
+
+# nvim
+alias vim="nvim"
+alias vimconfig='cd $HOME/.config/nvim && vim .'
+
+# fzf
+alias sd="cd ~/development && cd \$(find * -type d | fzf)"
+
+

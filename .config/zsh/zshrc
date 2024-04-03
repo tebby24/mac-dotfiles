@@ -1,0 +1,14 @@
+# source files
+source $HOME/.config/zsh/aliases
+
+# prompt
+PROMPT="%F{63}tebby%f%F{171}24%f %1~ "
+
+# antidote (plugin manager)
+source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
+antidote load $HOME/.config/zsh/zsh_plugins.txt
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
