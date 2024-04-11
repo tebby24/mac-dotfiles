@@ -1,25 +1,5 @@
 return {
     {
-        "catppuccin/nvim",
-        priority = 1000, -- Ensure it loads first
-        config = function()
-            require("catppuccin").setup({
-                color_overrides = {
-                    mocha = {
-                        base = "#000000",
-                        mantle = "#000000",
-                        crust = "#000000",
-                    },
-                },
-                integrations = {
-                    telescope = true,
-                },
-                transparent_background = true,
-            })
-            -- vim.cmd("colorscheme catppuccin-mocha")
-        end,
-    },
-    {
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
@@ -50,15 +30,5 @@ return {
             })
             vim.cmd("colorscheme tokyonight")
         end,
-    },
-    {
-        "tiagovla/tokyodark.nvim",
-        opts = {
-            transparent_background = true,
-        },
-        config = function(_, opts)
-            require("tokyodark").setup(opts) -- calling setup is optional
-            -- vim.cmd([[colorscheme tokyodark]])
-        end,
-    },
+    }
 }
