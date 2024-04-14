@@ -22,6 +22,9 @@ alias asbplayer='cd $HOME/Applications/asbplayer && yarn workspace @project/clie
 alias vim="nvim"
 alias vimconfig='cd $HOME/.config/nvim && vim .'
 
+# pip
+alias pip="pip3"
+
 # fzf
 alias sd="cd ~/development && cd \$(find * -type d | fzf)"
 
