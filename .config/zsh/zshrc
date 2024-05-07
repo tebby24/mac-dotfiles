@@ -1,6 +1,9 @@
 # source files
 source $HOME/.config/zsh/aliases
 
+# add homebrew to path
+export PATH="/opt/homebrew/bin:$PATH"
+
 # some weird compaudit thing I don't understand
 ZSH_DISABLE_COMPFIX=true
 

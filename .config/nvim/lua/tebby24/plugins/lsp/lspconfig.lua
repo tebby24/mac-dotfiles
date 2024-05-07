@@ -64,6 +64,20 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["cssls"] = function()
+				require("lspconfig").cssls.setup({
+					settings = {
+						css = {
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
+					},
+				})
+				require("lspconfig").clangd.setup({
+					cmd = { "clangd", "-I/usr/local/lib" },
+				})
+			end,
 		})
 
 		-- borders
