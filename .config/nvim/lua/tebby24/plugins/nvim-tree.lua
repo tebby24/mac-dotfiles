@@ -1,4 +1,5 @@
-return {
+return {}
+--[[ return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
@@ -50,4 +51,4 @@ return {
 
 		keymap.set("n", "<leader>fe", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
 	end,
-}
+} ]]

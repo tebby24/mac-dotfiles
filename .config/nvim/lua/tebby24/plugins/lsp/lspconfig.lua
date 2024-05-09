@@ -74,9 +74,6 @@ return {
 						},
 					},
 				})
-				require("lspconfig").clangd.setup({
-					cmd = { "clangd", "-I/usr/local/lib" },
-				})
 			end,
 		})
 
